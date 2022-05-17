@@ -1,0 +1,17 @@
+<script>
+  $(function () {
+    $("button#tos").on("click", function () {
+      $.ajax({
+        type: "get",
+        url: "/category/data-category",
+        success: function (order) {
+          var html = "";
+          for (var i = 0; i < order.length; i++) {
+            html += "<h2>" + order[i].name + "</h2>";
+          }
+          $("#target").html(html);
+        },
+      });
+    });
+  });
+</script>

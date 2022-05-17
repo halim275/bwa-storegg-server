@@ -96,4 +96,26 @@ module.exports = {
       res.redirect("/category");
     }
   },
+
+  getDatas: async (req, res) => {
+    try {
+      var order = [
+        {
+          id: 1,
+          name: "James",
+          drink: "Coffee",
+        },
+        {
+          id: 2,
+          name: "John",
+          drink: "Latte",
+        },
+      ];
+      var abc = await Category.find();
+      console.log(abc);
+      res.send(abc);
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
